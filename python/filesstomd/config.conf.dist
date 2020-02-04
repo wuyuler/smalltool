@@ -7,3 +7,5 @@ result=/result.txt
 filter=tools,table
 #限制最大深度
 deep=10
+#第一层的#个数
+first_level=2

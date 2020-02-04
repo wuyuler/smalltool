@@ -39,11 +39,17 @@ def getallfile(path,f,level,high):
 if __name__ == "__main__":
 	# java工程分析
  	root_path=os.path.dirname(os.path.abspath(__file__))   # 表示当前所处的文件夹的绝对路径
+ 	# 读取配置属性
  	cf.read(root_path+'/config.conf')
  	rootdir=cf.get("base","rootdir").decode('utf-8')
  	resultdir=cf.get("base","result")
  	deep=cf.getint("base","deep")
  	filename_filter=cf.get("base","filter").split(',')
+ 	first_level=cf.getint("base","first_level")
+
+ 	# 开始工作
  	f=open(root_path+resultdir, 'a')
- 	getallfile(rootdir,f,'#',deep)
+ 	f.seek(0)
+ 	f.truncate()   #清空文件
+ 	getallfile(rootdir,f,first_level*'#',deep)
  	f.close()
