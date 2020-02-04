@@ -1,0 +1,9 @@
+[base]
+#分析的根目录
+rootdir=F:/DataGenerate/src/com/uniplore
+#生成的md文档
+result=/result.txt
+#过滤不需要的文件夹
+filter=tools,table
+#限制最大深度
+deep=10
